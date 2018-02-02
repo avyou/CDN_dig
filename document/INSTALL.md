@@ -1,6 +1,6 @@
-### 安装
+### 安装说明
 
-#### dig工具的安装
+### dig工具的安装
 脚本目前依赖于 dig 工具的EDNS功能支持，后续更新可能会放弃他而使用python 的pydig库。
 ```
 wget ftp://ftp.isc.org/isc/bind9/9.9.3/bind-9.9.3.tar.gz
@@ -24,7 +24,7 @@ pip install -r  requirements.txt
 ### 配置
 配置和数据文件默认安装到: /usr/local/CDN_dig/，如果dig 安装的路径一致，默认配置是不用修改的，安装完即可使用。
 
-####目录结构
+##### 目录结构
 
 ```
 tree
@@ -43,7 +43,7 @@ tree
 ```
 当然还有安装到 python库目录的主要脚本文件，这里不写了。
 
-####配置文件解析
+##### 配置文件解析
 
 ```
 cat /usr/local/CDN_dig/etc/config.ini 
