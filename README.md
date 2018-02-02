@@ -6,7 +6,7 @@ dig @119.29.29.29 www.baidu.com  +client=218.203.160.194
 
 
 ### 项目地址
-https://github.com/avyou/CDN_dig
+`https://github.com/avyou/CDN_dig`
 
 ### 主要特性
 
@@ -72,7 +72,7 @@ cmd |whereip
 
 
 
-https://github.com/avyou/CDN_dig/document/INSTALL.md
+https://github.com/avyou/CDN_dig/blob/master/document/INSTALL.md
 
 
 
