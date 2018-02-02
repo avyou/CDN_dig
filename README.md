@@ -68,9 +68,11 @@ cmd |whereip
 
 ![Alt text](https://github.com/avyou/CDN_dig/blob/master/document/img/whereip_03.png)
 
-### 安装
+### 安装说明
 
 
+
+https://github.com/avyou/CDN_dig/document/INSTALL.md
 
 
 
