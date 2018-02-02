@@ -25,16 +25,17 @@ pip install -r  requirements.txt
 配置和数据文件默认安装到: /usr/local/CDN_dig/，如果dig 安装的路径一致，默认配置是不用修改的，安装完即可使用。
 
 ####目录结构
+
 ```
 tree
 .
 ├── bin
-│?? ├── cdig        ##执行文件 ,PATH 路径同存在一份
-│?? └── whereip    ##执行文件 ,PATH 路径同存在一份
+│   ├── cdig        ##执行文件 ,PATH 路径同存在一份
+│   └── whereip    ##执行文件 ,PATH 路径同存在一份
 ├── data
-│?? ├── ip_dns_isp.list   ## 全国DNS ip 列表文件，我自己整理的
-│?? ├── ipipdb.dat    ## IP 查询数据库，github上没有
-│?? └── qqwry.dat     ## 纯真IP 查询数据库
+│   ├── ip_dns_isp.list   ## 全国DNS ip 列表文件，我自己整理的
+│   ├── ipipdb.dat    ## IP 查询数据库，github上没有
+│   └── qqwry.dat     ## 纯真IP 查询数据库
 └── etc
     └── config.ini    ##配置文件 
 
@@ -42,8 +43,8 @@ tree
 ```
 当然还有安装到 python库目录的主要脚本文件，这里不写了。
 
-
 ####配置文件解析
+
 ```
 cat /usr/local/CDN_dig/etc/config.ini 
 [BASE]
