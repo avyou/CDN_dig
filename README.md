@@ -39,6 +39,8 @@ https://github.com/avyou/CDN_dig
               7). sudo cdig --domain=www.duowan.com --edns=8.8.8.8         ##指定其他EDNS如:8.8.8.8
               8). sudo cdig --domain=otafs.coloros.com.cloudglb.com. --ip 113.9.222.69   ## 加后缀 cloudglb.com 进行解析指定域名
 
+** 关于运营商及省份别名使用说明见文档最后<<附加说明>>部分			  
+			  
 #### whereip 工具
 这个是模仿快网 “nali” 功能的工具，不过这个是我自己写的代码，用了另外的IP查询接口，加了对管道输入和文件输入的查询输出排版。
 
@@ -73,9 +75,59 @@ cmd |whereip
 
 ### 安装说明
 
-
-
 https://github.com/avyou/CDN_dig/blob/master/document/INSTALL.md
+
+### 附加说明
+
+#### ISP简称对应表
+CTL    电信
+CNC    联通
+CMB    移动
+GWB    长宽
+CRC    铁通
+CER    教育网
+
+#### 省份区域对应列表
+BJ    北京
+TJ    天津
+HE    河北
+SX    山西
+NM    内蒙古
+LN    辽宁
+JL    吉林
+HL    黑龙江
+SH    上海
+JS    江苏
+ZJ    浙江
+AH    安徽
+FJ    福建
+JX    江西
+SD    山东
+HA    河南
+HB    湖北
+HN    湖南
+GD    广东
+GX    广西
+HI    海南
+CQ    重庆
+SC    四川
+GZ    贵州
+YN    云南
+XZ    西藏
+SN    陕西
+GS    甘肃
+QH    青海
+NX    宁夏
+XJ    新疆
+HK    香港
+MO    澳门
+TW    台湾
+CN    中国其它
+JP    日本
+KR    韩国
+AP    亚太其它
+OT    其余地区
+
 
 
 
