@@ -75,7 +75,7 @@ def usage():
 
         dig @119.29.29.29 www.baidu.com  +client=218.203.160.194
 
-        维护：赵子发, avyou55@gmail.com
+        作者：赵子发, avyou55@gmail.com
 
         url: https://github.com/avyou/CDN_dig
 

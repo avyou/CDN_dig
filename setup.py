@@ -55,7 +55,6 @@ setup(
 
     data_files = [
                    ('/usr/local/cdn_dig/data/',['cdn_dig/data/ip_dns_isp.list']),
-                   ('/usr/local/cdn_dig/data/',['cdn_dig/data/ipipdb.dat']),
                    ('/usr/local/cdn_dig/data/',['cdn_dig/data/qqwry.dat']),
                    ('/usr/local/cdn_dig/etc/',['cdn_dig/data/config.ini'])
     ],
