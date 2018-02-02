@@ -405,7 +405,7 @@ def output_tables(domain,edns,client_ip=None,area=None):
                     print colored('错误： %s 文件中不包含 "%s" 此区域的IP\n' %(ipdns_db,area),'red')
                     sys.exit(2)
         else:
-            isp_ip_list = [client_ip,'']
+            isp_ip_list = [[client_ip,'']]
 
         getline(dns_parse_data_list,isp_ip_list,domain,edns,1,0)
 
