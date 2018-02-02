@@ -30,14 +30,14 @@ pip install -r  requirements.txt
 tree
 .
 ├── bin
-│   ├── cdig        ##执行文件 ,PATH 路径同存在一份
-│   └── whereip    ##执行文件 ,PATH 路径同存在一份
+│   ├── cdig               ##执行文件 ,PATH 路径同存在一份
+│   └── whereip            ##执行文件 ,PATH 路径同存在一份
 ├── data
-│   ├── ip_dns_isp.list   ## 全国DNS ip 列表文件，我自己整理的
-│   ├── ipipdb.dat    ## IP 查询数据库，github上没有
-│   └── qqwry.dat     ## 纯真IP 查询数据库
-└── etc
-    └── config.ini    ##配置文件 
+│   ├── ip_dns_isp.list    ## 全国DNS ip 列表文件，我自己整理的
+│   ├── ipipdb.dat         ## IP 查询数据库，github上没有
+│   └── qqwry.dat          ## 纯真IP 查询数据库
+└── etc 
+    └── config.ini         ##配置文件 
 
 	
 ```
@@ -48,17 +48,17 @@ tree
 ```
 cat /usr/local/CDN_dig/etc/config.ini 
 [BASE]
-default_api = ip138   ##默认接口
-default_dns = 119.29.29.29    ##默认EDNS
+default_api = ip138                                 ##默认接口
+default_dns = 119.29.29.29                          ##默认EDNS
 ipdns_db = /usr/local/CDN_dig/data/ip_dns_isp.list  ##全国DNS的IP列表
-tmp_dir = /tmp/dig    ##结果输出到文件和临时目录
-dig = /usr/local/dig/bin/dig   ## dig 二进制文件路径
+tmp_dir = /tmp/dig                                  ##结果输出到文件和临时目录
+dig = /usr/local/dig/bin/dig                        ## dig 二进制文件路径
 
 [API]
-ip138 = http://www.ip138.com/ips138.asp?ip=   ##ip138 抓取的接口，不要抓得太多了^~^
-#ipdb = /usr/local/CDN_dig/data/ipipdb.dat    ##ipip的收费IP查询数据库，没上传
-chinaz = http://ip.chinaz.com/     ##chinaz 抓取的接口
-qqwry = /usr/local/CDN_dig/data/qqwry.dat  ##纯真IP查询数据库,2018年1月份的
+ip138 = http://www.ip138.com/ips138.asp?ip=         ##ip138 抓取的接口，不要抓得太多了^~^
+#ipdb = /usr/local/CDN_dig/data/ipipdb.dat          ##ipip的收费IP查询数据库，没上传
+chinaz = http://ip.chinaz.com/                      ##chinaz 抓取的接口
+qqwry = /usr/local/CDN_dig/data/qqwry.dat           ##纯真IP查询数据库,2018年1月份的
 ```
 
 
