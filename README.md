@@ -80,14 +80,19 @@ https://github.com/avyou/CDN_dig/blob/master/document/INSTALL.md
 ### 附加说明
 
 #### ISP简称对应表
+
+```
 CTL    电信
 CNC    联通
 CMB    移动
 GWB    长宽
 CRC    铁通
 CER    教育网
+```
 
 #### 省份区域对应列表
+
+```
 BJ    北京
 TJ    天津
 HE    河北
@@ -127,7 +132,7 @@ JP    日本
 KR    韩国
 AP    亚太其它
 OT    其余地区
-
+```
 
 
 
