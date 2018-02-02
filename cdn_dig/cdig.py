@@ -71,13 +71,13 @@ def usage():
     help_info = colored('''
 ####################################################################################################################################
 
-        此脚本用于快速查询DNS所调度的区域，即客户端IP请求域名时被调度到的区域节点,实际上是类似下面命令的封装：
+        此脚本用于在linux 终端快速查询 CDN 全国被调度哪些区域节点的工具,实际上是类似下面命令的封装：
 
-        dig @ns1.cloudglb.com  kw.m.l.cztv.com.cloudglb.com  +client=218.203.160.194
+        dig @119.29.29.29 www.baidu.com  +client=218.203.160.194
 
         维护：赵子发, avyou55@gmail.com
 
-        url: https://github.com/avyou/cdn_dig
+        url: https://github.com/avyou/CDN_dig
 
         用法: cdig -d <--domain> [-h <--help>] [-i,--ip>] [-a,--isp] [-n,--edns]
 
@@ -87,8 +87,7 @@ def usage():
               -i, --ip=:     后面跟要查询的IP，可选，如果不填，且无 -a或--isp=选项 ，默认查看全网调度.
                              如果 --ip 与 --isp 同时指定，只取--ip.
               -a, --isp=:    区域别名，如ctl-gd，表示要查询客户端IP在广东电信访问时域名被调度的哪里.多个ISP用逗号分隔. --isp 的别名映射在 %s 文件.
-              -n, --edns=:   使用指定的且支持EDNS的IP进行解析，可选，默认是 119.29.29.29, 
-                             如果接入的是快网的CDN，可以使用快网DNS: ns1.cloudglb.com 进行解析,简写：--edns=fastweb .
+              -n, --edns=:   使用指定的且支持EDNS的IP进行解析，可选，默认是 119.29.29.29
         举例：
               1). sudo cdig --domain=www.duowan.com --isp=cmb-sd           ##查询此域名山东移动被调度哪里
               2). sudo cdig --domain=www.duowan.com --isp=cmb-sd,cnc-sd    ##查询多个ISP用逗号分隔
@@ -96,9 +95,8 @@ def usage():
               4). sudo cdig --domain=www.duowan.com --isp=ctl,cnc          ##查询多个ISP用逗号分隔 
               5). sudo cdig --domain=www.duowan.com --ip=1.1.1.1           ##查询此域名在1.1.1.1被调度哪里
               6). sudo cdig --domain=www.duowan.com                        ##无--ip或--ISP选项，默认使用查询全网调度
-              7). sudo cdig --domain=www.duowan.com --edns=fastweb         ##使用 ns1.cloudglb.com 进行解析，这里的 "fastweb" 是快网的特殊项.可以指定其他EDNS如:8.8.8.8
-              8). sudo cdig --domain=www.duowan.com --edns=8.8.8.8         ##使用 ns1.cloudglb.com 进行解析，这里的 "fastweb" 是快网的特殊项.可以指定其他EDNS如:8.8.8.8
-              9). sudo cdig --domain=otafs.coloros.com.cloudglb.com. --ip 113.9.222.69   ## 加后缀 cloudglb.com 进行解析指定域名
+              7). sudo cdig --domain=www.duowan.com --edns=8.8.8.8         ##指定其他EDNS如:8.8.8.8
+              8). sudo cdig --domain=otafs.coloros.com.cloudglb.com. --ip 113.9.222.69   ## 加后缀 cloudglb.com 进行解析指定域名
 
 #####################################################################################################################################
     ''' %os.path.basename(ipdns_db),'yellow')
@@ -158,17 +156,11 @@ def dig_query(domain,edns,client_ip,show_on):
     reobj_ip = re.compile(r'.*IN[\t| ]+?A[\t| ]+(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})')
     reobj_cname = re.compile(r'.*IN[\t| ]+?CNAME[\t| ]+(.+)\.$')
     ###reobj_cname = re.compile(r'.*IN[\t| ]+?CNAME.*')
-
-    ###dig @ns1.cloudglb.com  kw.m.l.cztv.com.cloudglb.com  +client=218.203.160.194
-    ###dig @119.29.29.29  kw.m.l.cztv.com  +client=218.203.160.194
+    ###dig @119.29.29.29  www.baidu.com +client=218.203.160.194
     if edns is None:
         edns = default_dns
         printinfo(domain,edns,show_on)
 
-    elif edns == 'fastweb':
-        edns = 'ns1.cloudglb.com'
-        domain = domain + '.cloudglb.com'
-        printinfo(domain,edns,show_on)
     else:
         edns = edns
         printinfo(domain,edns,show_on)
@@ -385,7 +377,7 @@ def output_tables(domain,edns,client_ip=None,area=None):
         writeLog(tmpfile,info)
         ##读取
         show_on = 1
-        getline(dns_parse_data_list,isp_ip_list,domain,edns,show_on,1)
+        getline(dns_parse_data_list,ip_list,domain,edns,show_on,1)
 
     elif set(area.split(',')).issubset(all_isp) and client_ip is None:
         stat_show = 1
@@ -471,7 +463,7 @@ def main():
         cf.read(config_file)
     except:
         try:
-            cd.read('.data/config.ini')
+            cf.read('.data/config.ini')
         except Exception as e:
             print "读取配置文件出错:%s" %e 
             sys.exit(65)

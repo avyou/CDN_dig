@@ -1,20 +1,16 @@
 ### 介绍
-这是我入职快网后写的一个用于在linux 终端快速查询全国 CDN 调度哪里区域节点的工具（部分自定的特性和IP查询数据库已从代码中去掉）。
-工具类似下面命令的封装：
+这是我入职快网后写的一个用于在linux 终端快速查询全国 CDN 调度哪里区域节点的工具。
+类似下面命令的封装：
 
 dig @119.29.29.29 www.baidu.com  +client=218.203.160.194
 
-
-### 项目地址
-https://github.com/avyou/CDN_dig
+因可能涉及隐私，有些自定的特性和IP查询数据库已从代码中去掉。
 
 ### 主要特性
 
-- 支持电信、联通、移动、铁通、长宽、教育网调度域名的查询；
-- 利用 dig 的 EDNS 功能，能快速输出查询结果,而不需要在全国部署节点；
-- 支持输入多个运营商或多个省份别名的指定查询；
-- 支持指定IP查询调度，支持更换EDNS；
-- 支持更换IP查询接口, 查询失轮询接口; 
+- 支持电信、联通、移动、铁通、长宽、教育网调度的查询；
+- 利用 dig 的 EDNS 功能，能快速得到查询结果,而不需要在全国部署节点；
+- 支持输入多个运营商指定查询；
 - 支持输出CDN调度覆盖的统计结果；
 - 支持多IP地址查询（whereip）；
 
@@ -40,10 +36,9 @@ https://github.com/avyou/CDN_dig
               8). sudo cdig --domain=otafs.coloros.com.cloudglb.com. --ip 113.9.222.69   ## 加后缀 cloudglb.com 进行解析指定域名
 
 #### whereip 工具
-这个是模仿快网 “nali” 功能的工具，不过这个是我自己写的代码，用了另外的IP查询接口，加了对管道输入和文件输入的查询输出排版。
+这个是模仿快网 “nali” 的工具，但是我自己别写的代码，用了另外的IP查询接口，加了对管道输入和文件输入的查询输出排版。
 
-whereip  <ip|ip_file>
-cmd |whereip
+whereip  ip
 
 举例：
 
@@ -56,19 +51,10 @@ cmd |whereip
 
 ### 截图
 
-![Alt text](https://github.com/avyou/CDN_dig/blob/master/document/img/cdn_dig_01.png)
 
-![Alt text](https://github.com/avyou/CDN_dig/blob/master/document/img/cdn_dig_02.png)
 
-![Alt text](https://github.com/avyou/CDN_dig/blob/master/document/img/cdn_dig_03.png)
 
-![Alt text](https://github.com/avyou/CDN_dig/blob/master/document/img/whereip_01.png)
 
-![Alt text](https://github.com/avyou/CDN_dig/blob/master/document/img/whereip_02.png)
-
-![Alt text](https://github.com/avyou/CDN_dig/blob/master/document/img/whereip_03.png)
-
-### 安装
 
 
 
