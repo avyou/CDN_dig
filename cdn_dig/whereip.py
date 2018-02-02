@@ -82,18 +82,18 @@ def main():
 
     package_path = os.path.dirname(os.path.realpath(__file__))
     cf = ConfigParser.ConfigParser()
-    config_file = '/usr/local/cdn_dig/etc/config.ini'
+    config_file = '/usr/local/CDN_dig/etc/config.ini'
     try:
         cf.read(config_file)
     except:
         try:
-            cd.read('.data/config.ini')
+            cf.read('.data/config.ini')
         except Exception as e:
             api = 'ip138'
             api_dict = {
                 "ip138":"http://www.ip138.com/ips138.asp?ip=",
                 "chinaz":"http://ip.chinaz.com/",
-                "ipdb":"/usr/local/cdn_dig/data/ipipdb.dat",
+                "qqwry":"/usr/local/CDN_dig/data/qqwry.dat",
             }
     else:
         try:

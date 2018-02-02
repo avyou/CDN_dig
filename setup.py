@@ -2,7 +2,7 @@ import os
 from setuptools import setup,find_packages
 
 
-data_dir = ['/usr/local/cdn_dig/data','/usr/local/cdn_dig/etc']
+data_dir = ['/usr/local/CDN_dig/data','/usr/local/CDN_dig/etc','/usr/local/CDN_dig/bin']
 
 for idir in data_dir:
     if not os.path.exists(idir):
@@ -20,13 +20,13 @@ if not os.path.exists(s_file):
         f.write(s)
 
 setup(
-    name='cdn_dig',
+    name='CDN_dig',
     version='1.0',
     description='EDNS dig is used to query where the client IP of request is dispatched for CDN',
     long_description=open(
         os.path.join(
             os.path.dirname(__file__),
-            'README.rst'
+            'README.md'
         )
     ).read(),
     author='avyou',
@@ -41,7 +41,7 @@ setup(
         "tqdm>=4.19.5",
     ],
 
-    url='https://github.com/avyou/cdn_dig',
+    url='https://github.com/avyou/CDN_dig',
 
     packages = find_packages(),
 
@@ -65,3 +65,8 @@ setup(
 
 if writed == 1:
     os.remove(s_file)
+
+import distutils.sysconfig,shutil
+pre = distutils.sysconfig.get_config_var("prefix")
+shutil.copy(os.path.join(pre,"bin",'cdig'),"/usr/local/CDN_dig/bin/")
+shutil.copy(os.path.join(pre,"bin",'whereip'),"/usr/local/CDN_dig/bin/")

@@ -466,7 +466,7 @@ def main():
     package_path = os.path.dirname(os.path.realpath(__file__))
 
     cf = ConfigParser.ConfigParser()
-    config_file = '/usr/local/cdn_dig/etc/config.ini'
+    config_file = '/usr/local/CDN_dig/etc/config.ini'
     try:
         cf.read(config_file)
     except:
