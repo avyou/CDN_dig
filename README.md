@@ -2,11 +2,11 @@
 这是我入职快网后写的一个用于在linux 终端快速查询全国 CDN 调度哪里区域节点的工具（部分自定的特性和IP查询数据库已从代码中去掉）。
 工具类似下面命令的封装：
 
-dig @119.29.29.29 www.baidu.com  +client=218.203.160.194
+`dig @119.29.29.29 www.baidu.com  +client=218.203.160.194`
 
 
 ### 项目地址
-`https://github.com/avyou/CDN_dig`
+https://github.com/avyou/CDN_dig
 
 ### 主要特性
 
@@ -42,8 +42,11 @@ dig @119.29.29.29 www.baidu.com  +client=218.203.160.194
 #### whereip 工具
 这个是模仿快网 “nali” 功能的工具，不过这个是我自己写的代码，用了另外的IP查询接口，加了对管道输入和文件输入的查询输出排版。
 
+```
 whereip  <ip|ip_file>
+
 cmd |whereip
+```
 
 举例：
 
