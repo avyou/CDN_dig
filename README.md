@@ -67,6 +67,8 @@ cmd |whereip
 
 ![Alt text](https://github.com/avyou/CDN_dig/blob/master/document/img/cdn_dig_03.png)
 
+![Alt text](https://github.com/avyou/CDN_dig/blob/master/document/img/cdn_dig_04.png)
+
 ![Alt text](https://github.com/avyou/CDN_dig/blob/master/document/img/whereip_01.png)
 
 ![Alt text](https://github.com/avyou/CDN_dig/blob/master/document/img/whereip_02.png)
