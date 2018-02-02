@@ -1,78 +1,64 @@
-### 介绍
-这是我入职快网后写的一个用于在linux 终端快速查询全国 CDN 调度哪里区域节点的工具。
-类似下面命令的封装：
+### 安装
 
-dig @119.29.29.29 www.baidu.com  +client=218.203.160.194
+#### dig工具的安装
+脚本目前依赖于 dig 工具的EDNS功能支持，后续更新可能会放弃他而使用python 的pydig库。
+```
+wget ftp://ftp.isc.org/isc/bind9/9.9.3/bind-9.9.3.tar.gz
+tar xf bind-9.9.3.tar.gz
+cd bind-9.9.3
 
-因可能涉及隐私，有些自定的特性和IP查询数据库已从代码中去掉。
+wget http://wilmer.gaa.st/edns-client-subnet/bind-9.9.3-dig-edns-client-subnet-iana.diff
+patch -p0 < bind-9.9.3-dig-edns-client-subnet-iana.diff
+./configure --prefix=/usr/local/dig   --without-openssl
+make
+```
 
-### 主要特性
+### 安装 CDN_dig
+```
+git clone git@github.com:avyou/CDN_dig.git
+cd CDN_dig
+python setup.py install  
+//如果以前由于一些依赖库安装不成功，可以先使用pip直接安装依赖，然后再重新执行一遍，如下：
+pip install -r  requirements.txt
+```
+### 配置
+配置和数据文件默认安装到: /usr/local/CDN_dig/，如果dig 安装的路径一致，默认配置是不用修改的，安装完即可使用。
 
-- 支持电信、联通、移动、铁通、长宽、教育网调度的查询；
-- 利用 dig 的 EDNS 功能，能快速得到查询结果,而不需要在全国部署节点；
-- 支持输入多个运营商指定查询；
-- 支持输出CDN调度覆盖的统计结果；
-- 支持多IP地址查询（whereip）；
+####目录结构
+```
+tree
+.
+├── bin
+│?? ├── cdig        ##执行文件 ,PATH 路径同存在一份
+│?? └── whereip    ##执行文件 ,PATH 路径同存在一份
+├── data
+│?? ├── ip_dns_isp.list   ## 全国DNS ip 列表文件，我自己整理的
+│?? ├── ipipdb.dat    ## IP 查询数据库，github上没有
+│?? └── qqwry.dat     ## 纯真IP 查询数据库
+└── etc
+    └── config.ini    ##配置文件 
 
-### 用法
-#### cdig 工具
-		cdig -d <--domain> [-h <--help>] [-i,--ip>] [-a,--isp] [-n,--edns]
-
-        参数：
-              -d, --domain=: 后面跟要的查询域名，必选项.
-              -h, --help:    帮助信息.
-              -i, --ip=:     后面跟要查询的IP，可选，如果不填，且无 -a或--isp=选项 ，默认查看全网调度.
-                             如果 --ip 与 --isp 同时指定，只取--ip.
-              -a, --isp=:    区域别名，如ctl-gd，表示要查询客户端IP在广东电信访问时域名被调度的哪里.多个ISP用逗号分隔. --isp 的别名映射在 %s 文件.
-              -n, --edns=:   使用指定的且支持EDNS的IP进行解析，可选，默认是 119.29.29.29
-        举例：
-              1). sudo cdig --domain=www.duowan.com --isp=cmb-sd           ##查询此域名山东移动被调度哪里
-              2). sudo cdig --domain=www.duowan.com --isp=cmb-sd,cnc-sd    ##查询多个ISP用逗号分隔
-              3). sudo cdig --domain=www.duowan.com --isp=cmb              ##查询此域名全部移动被调度哪里,查询多个ISP用逗号分隔
-              4). sudo cdig --domain=www.duowan.com --isp=ctl,cnc          ##查询多个ISP用逗号分隔 
-              5). sudo cdig --domain=www.duowan.com --ip=1.1.1.1           ##查询此域名在1.1.1.1被调度哪里
-              6). sudo cdig --domain=www.duowan.com                        ##无--ip或--ISP选项，默认使用查询全网调度
-              7). sudo cdig --domain=www.duowan.com --edns=8.8.8.8         ##指定其他EDNS如:8.8.8.8
-              8). sudo cdig --domain=otafs.coloros.com.cloudglb.com. --ip 113.9.222.69   ## 加后缀 cloudglb.com 进行解析指定域名
-
-#### whereip 工具
-这个是模仿快网 “nali” 的工具，但是我自己别写的代码，用了另外的IP查询接口，加了对管道输入和文件输入的查询输出排版。
-
-whereip  ip
-
-举例：
-
-    1. whereip  202.117.112.3
-	2. whereip  202.117.112.3  219.146.1.66 
-	3. echo "202.117.112.3" |whereip
-	4. whereip  ip.txt
-	5. cat ip.txt |whereip
 	
-
-### 截图
-
-
+```
+当然还有安装到 python库目录的主要脚本文件，这里不写了。
 
 
+####配置文件解析
+```
+cat /usr/local/CDN_dig/etc/config.ini 
+[BASE]
+default_api = ip138   ##默认接口
+default_dns = 119.29.29.29    ##默认EDNS
+ipdns_db = /usr/local/CDN_dig/data/ip_dns_isp.list  ##全国DNS的IP列表
+tmp_dir = /tmp/dig    ##结果输出到文件和临时目录
+dig = /usr/local/dig/bin/dig   ## dig 二进制文件路径
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[API]
+ip138 = http://www.ip138.com/ips138.asp?ip=   ##ip138 抓取的接口，不要抓得太多了^~^
+#ipdb = /usr/local/CDN_dig/data/ipipdb.dat    ##ipip的收费IP查询数据库，没上传
+chinaz = http://ip.chinaz.com/     ##chinaz 抓取的接口
+qqwry = /usr/local/CDN_dig/data/qqwry.dat  ##纯真IP查询数据库,2018年1月份的
+```
 
 
 
