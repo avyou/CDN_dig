@@ -1,10 +1,14 @@
 import os
 from setuptools import setup,find_packages
 
+base_dir="/usr/local/CDN_dig/data/"
+data_dir=os.path.join(base_dir,"data")
+etc_dir=os.path.join(base_dir,"etc")
+bin_dir=os.path.join(base_dir,"bin")
 
-data_dir = ['/usr/local/CDN_dig/data','/usr/local/CDN_dig/etc','/usr/local/CDN_dig/bin']
+CDN_dir = [data_dir,etc_dir,bin_dir]
 
-for idir in data_dir:
+for idir in CDN_dir:
     if not os.path.exists(idir):
         os.makedirs(idir)
 
@@ -12,6 +16,7 @@ s = '''[easy_install]
 index-url=http://pypi.douban.com/simple
 '''
 s_file = os.path.join(os.environ['HOME'],'.pydistutils.cfg')
+
 
 writed = 0
 if not os.path.exists(s_file):
@@ -54,9 +59,9 @@ setup(
     package_data = {'cdn_dig': ["data/*"]},
 
     data_files = [
-                   ('/usr/local/CDN_dig/data/',['cdn_dig/data/ip_dns_isp.list']),
-                   ('/usr/local/CDN_dig/data/',['cdn_dig/data/qqwry.dat']),
-                   ('/usr/local/CDN_dig/etc/',['cdn_dig/data/config.ini'])
+                   (data_dir,['cdn_dig/data/ip_dns_isp.list']),
+                   (data_dir,['cdn_dig/data/qqwry.dat']),
+                   (etc_dir,['cdn_dig/data/config.ini'])
     ],
 
     license='MIT'
@@ -67,5 +72,5 @@ if writed == 1:
 
 import distutils.sysconfig,shutil
 pre = distutils.sysconfig.get_config_var("prefix")
-shutil.copy(os.path.join(pre,"bin",'cdig'),"/usr/local/CDN_dig/bin/")
-shutil.copy(os.path.join(pre,"bin",'whereip'),"/usr/local/CDN_dig/bin/")
+shutil.copy(os.path.join(pre,"bin",'cdig'),bin_dir)
+shutil.copy(os.path.join(pre,"bin",'whereip'),bin_dir)
