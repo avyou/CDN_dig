@@ -1,7 +1,7 @@
 import os
 from setuptools import setup,find_packages
 
-base_dir="/usr/local/CDN_dig/data/"
+base_dir="/usr/local/CDN_dig/"
 data_dir=os.path.join(base_dir,"data")
 etc_dir=os.path.join(base_dir,"etc")
 bin_dir=os.path.join(base_dir,"bin")
