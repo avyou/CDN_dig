@@ -378,7 +378,7 @@ def output_tables(domain,edns,client_ip=None,area=None):
         show_on = 1
         getline(dns_parse_data_list,ip_list,domain,edns,show_on,1)
 
-    elif set(area.split(',')).issubset(all_isp) and client_ip is None:
+    elif client_ip is None and set(area.split(',')).issubset(all_isp):
         stat_show = 1
         show_on = 1
         info =  "\n=============== 正在调用全国IP解析,请稍候... ==============="
