@@ -241,7 +241,7 @@ def query_area(client_ip,nodeip,query_ip_show):
 def stat_isp():
     ##之所以用列表，而不用累加，是方便以后可能扩展要显示里面的内容
     ##print client_area_list
-
+    gwb_re_obj = re.compile('长宽|长城宽带|鹏博士'.decode('utf8'))
     ##检查点
     for i in client_area_list:
         isp = i.split()[-1]
@@ -254,7 +254,7 @@ def stat_isp():
             cmb_client_area_list.append(i)
         if isp == '铁通':
             crc_client_area_list.append(i)
-        if isp == '长城宽带':
+        if gwb_re_obj.search(isp.decode('utf8')):
             gwb_client_area_list.append(i)
         if isp == '教育网':
             cer_client_area_list.append(i)
@@ -271,7 +271,7 @@ def stat_isp():
             cmb_node_area_list.append(i)
         if isp == '铁通':
             crc_node_area_list.append(i)
-        if isp == '长城宽带' or isp == '鹏博士宽带':
+        if gwb_re_obj.search(isp.decode('utf8')):
             gwb_node_area_list.append(i)
         if isp == '教育网':
             cer_node_area_list.append(i)
@@ -287,7 +287,7 @@ def stat_isp():
             cmb_node_isp_list.append(i)
         if isp == '铁通':
             crc_node_isp_list.append(i)
-        if isp == '长城宽带':
+        if gwb_re_obj.search(isp.decode('utf8')):
             gwb_node_isp_list.append(i)
         if isp == '教育网':
             cer_node_isp_list.append(i)
@@ -303,7 +303,7 @@ def stat_isp():
             cmb_cover_isp_list.append(i)
         if isp == '铁通':
             crc_cover_isp_list.append(i)
-        if isp == '长城宽带':
+        if gwb_re_obj.search(isp.decode('utf8')):
             gwb_cover_isp_list.append(i)
         if isp == '教育网':
             cer_cover_isp_list.append(i)
