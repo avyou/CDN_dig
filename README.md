@@ -14,7 +14,7 @@ https://github.com/avyou/CDN_dig
 - 利用 dig 的 EDNS 功能，能快速查询并输出结果，而不需要在全国各地部署节点；
 - 支持输入多个运营商或多个省份别名的指定查询；
 - 支持指定IP查询调度，支持更换EDNS；
-- 支持更换IP查询接口, 查询失轮询接口; 
+- 支持更换IP查询接口, 查询失败轮询接口; 
 - 支持输出CDN调度覆盖的统计结果；
 - 支持多IP地址查询（whereip）；
 
@@ -37,7 +37,6 @@ https://github.com/avyou/CDN_dig
               5). sudo cdig --domain=www.duowan.com --ip=1.1.1.1           ##查询此域名在1.1.1.1被调度哪里
               6). sudo cdig --domain=www.duowan.com                        ##无--ip或--ISP选项，默认使用查询全网调度
               7). sudo cdig --domain=www.duowan.com --edns=8.8.8.8         ##指定其他EDNS如:8.8.8.8
-              8). sudo cdig --domain=otafs.coloros.com.cloudglb.com. --ip 113.9.222.69   ## 加后缀 cloudglb.com 进行解析指定域名
 
 ##### 关于运营商及省份别名使用说明见文档最后<<附加说明>>部分			  
 			  

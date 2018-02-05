@@ -91,12 +91,11 @@ def usage():
         举例：
               1). sudo cdig --domain=www.duowan.com --isp=cmb-sd           ##查询此域名山东移动被调度哪里
               2). sudo cdig --domain=www.duowan.com --isp=cmb-sd,cnc-sd    ##查询多个ISP用逗号分隔
-              3). sudo cdig --domain=www.duowan.com --isp=cmb              ##查询此域名全部移动被调度哪里,查询多个ISP用逗号分隔
+              3). sudo cdig --domain=www.duowan.com --isp=cmb              ##查询此域名全部移动被调度哪里
               4). sudo cdig --domain=www.duowan.com --isp=ctl,cnc          ##查询多个ISP用逗号分隔 
               5). sudo cdig --domain=www.duowan.com --ip=1.1.1.1           ##查询此域名在1.1.1.1被调度哪里
               6). sudo cdig --domain=www.duowan.com                        ##无--ip或--ISP选项，默认使用查询全网调度
               7). sudo cdig --domain=www.duowan.com --edns=8.8.8.8         ##指定其他EDNS如:8.8.8.8
-              8). sudo cdig --domain=otafs.coloros.com.cloudglb.com. --ip 113.9.222.69   ## 加后缀 cloudglb.com 进行解析指定域名
 
 #####################################################################################################################################
     ''' %os.path.basename(ipdns_db),'yellow')
