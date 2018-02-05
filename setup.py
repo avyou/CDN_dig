@@ -54,9 +54,9 @@ setup(
     package_data = {'cdn_dig': ["data/*"]},
 
     data_files = [
-                   ('/usr/local/CDN_dig/data/',['CDN_dig/data/ip_dns_isp.list']),
-                   ('/usr/local/CDN_dig/data/',['CDN_dig/data/qqwry.dat']),
-                   ('/usr/local/CDN_dig/etc/',['CDN_dig/data/config.ini'])
+                   ('/usr/local/CDN_dig/data/',['cdn_dig/data/ip_dns_isp.list']),
+                   ('/usr/local/CDN_dig/data/',['cdn_dig/data/qqwry.dat']),
+                   ('/usr/local/CDN_dig/etc/',['cdn_dig/data/config.ini'])
     ],
 
     license='MIT'
