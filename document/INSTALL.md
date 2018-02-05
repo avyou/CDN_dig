@@ -21,7 +21,7 @@ make
 
 ### 安装 CDN_dig
 ```
-git clone git@github.com:avyou/CDN_dig.git
+git clone https://github.com/avyou/CDN_dig.git
 cd CDN_dig
 python setup.py install  
 //如果以前由于一些依赖库安装不成功，可以先使用pip直接安装依赖，然后再重新执行一遍，如下：
