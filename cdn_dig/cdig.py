@@ -79,7 +79,7 @@ def usage():
 
         url: https://github.com/avyou/CDN_dig
 
-        用法: cdig -d <--domain> [-h <--help>] [-i,--ip>] [-a,--isp] [-n,--edns]
+        用法: cdig <-d|--domain=> [-h |--help=] [-i |--ip=] [-a |--isp=] [-n |--edns=]
 
         参数：
               -d, --domain=: 后面跟要的查询域名，必选项.
