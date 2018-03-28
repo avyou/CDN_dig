@@ -1,47 +1,47 @@
-### ½éÉÜ
-ÕâÊÇÎÒÈëÖ°¿ìÍøºóÐ´µÄÒ»¸öÓÃÓÚÔÚlinux ÖÕ¶Ë¿ìËÙ²éÑ¯È«¹ú CDN ÓòÃûµ÷¶Èµ½ÄÄ¸öÇøÓò½ÚµãµÄ¹¤¾ß£¨²¿·Ö×Ô¶¨µÄÌØÐÔºÍIP²éÑ¯Êý¾Ý¿âÒÑ´Ó´úÂëÖÐÈ¥µô£©¡£
-¹¤¾ßÀàËÆÏÂÃæÃüÁîµÄ·â×°£º
+### ä»‹ç»
+è¿™æ˜¯ä¸€ä¸ªç”¨äºŽåœ¨linux ç»ˆç«¯å¿«é€ŸæŸ¥è¯¢å…¨å›½ CDN åŸŸåè°ƒåº¦åˆ°å“ªä¸ªåŒºåŸŸèŠ‚ç‚¹çš„å·¥å…·ã€‚
+å·¥å…·ç±»ä¼¼ä¸‹é¢å‘½ä»¤çš„å°è£…ï¼š
 
 `dig @119.29.29.29 www.baidu.com  +client=218.203.160.194`
 
 
-### ÏîÄ¿µØÖ·
+### é¡¹ç›®åœ°å€
 https://github.com/avyou/CDN_dig
 
-### Ö÷ÒªÌØÐÔ
+### ä¸»è¦ç‰¹æ€§
 
-- Ö§³ÖµçÐÅ¡¢ÁªÍ¨¡¢ÒÆ¶¯¡¢ÌúÍ¨¡¢³¤¿í¡¢½ÌÓýÍøµÈÍøÂçµÄÓòÃûµ÷¶È²éÑ¯£»
-- ÀûÓÃ dig µÄ EDNS ¹¦ÄÜ£¬ÄÜ¿ìËÙ²éÑ¯²¢Êä³ö½á¹û£¬¶ø²»ÐèÒªÔÚÈ«¹ú¸÷µØ²¿Êð½Úµã£»
-- Ö§³ÖÊäÈë¶à¸öÔËÓªÉÌ»ò¶à¸öÊ¡·Ý±ðÃûµÄÖ¸¶¨²éÑ¯£»
-- Ö§³ÖÖ¸¶¨IP²éÑ¯µ÷¶È£¬Ö§³Ö¸ü»»EDNS£»
-- Ö§³Ö¸ü»»IP²éÑ¯½Ó¿Ú, ²éÑ¯Ê§°ÜÂÖÑ¯½Ó¿Ú; 
-- Ö§³ÖÊä³öCDNµ÷¶È¸²¸ÇµÄÍ³¼Æ½á¹û£»
-- Ö§³Ö¶àIPµØÖ·²éÑ¯£¨whereip£©£»
+- æ”¯æŒç”µä¿¡ã€è”é€šã€ç§»åŠ¨ã€é“é€šã€é•¿å®½ã€æ•™è‚²ç½‘ç­‰ç½‘ç»œçš„åŸŸåè°ƒåº¦æŸ¥è¯¢ï¼›
+- åˆ©ç”¨ dig çš„ EDNS åŠŸèƒ½ï¼Œèƒ½å¿«é€ŸæŸ¥è¯¢å¹¶è¾“å‡ºç»“æžœï¼Œè€Œä¸éœ€è¦åœ¨å…¨å›½å„åœ°éƒ¨ç½²èŠ‚ç‚¹ï¼›
+- æ”¯æŒè¾“å…¥å¤šä¸ªè¿è¥å•†æˆ–å¤šä¸ªçœä»½åˆ«åçš„æŒ‡å®šæŸ¥è¯¢ï¼›
+- æ”¯æŒæŒ‡å®šIPæŸ¥è¯¢è°ƒåº¦ï¼Œæ”¯æŒæ›´æ¢EDNSï¼›
+- æ”¯æŒæ›´æ¢IPæŸ¥è¯¢æŽ¥å£, æŸ¥è¯¢å¤±è´¥è½®è¯¢æŽ¥å£; 
+- æ”¯æŒè¾“å‡ºCDNè°ƒåº¦è¦†ç›–çš„ç»Ÿè®¡ç»“æžœï¼›
+- æ”¯æŒå¤šIPåœ°å€æŸ¥è¯¢ï¼ˆwhereipï¼‰ï¼›
 
-### ÓÃ·¨
-#### cdig ¹¤¾ß
+### ç”¨æ³•
+#### cdig å·¥å…·
 		cdig <-d,--domain=> [-h,--help=] [-i,--ip=] [-a,--isp=] [-n,--edns=]
 
-        ²ÎÊý£º
-              -d, --domain=: ºóÃæ¸úÒªµÄ²éÑ¯ÓòÃû£¬±ØÑ¡Ïî.
-              -h, --help:    °ïÖúÐÅÏ¢.
-              -i, --ip=:     ºóÃæ¸úÒª²éÑ¯µÄIP£¬¿ÉÑ¡£¬Èç¹û²»Ìî£¬ÇÒÎÞ -a»ò--isp=Ñ¡Ïî £¬Ä¬ÈÏ²é¿´È«Íøµ÷¶È.
-                             Èç¹û --ip Óë --isp Í¬Ê±Ö¸¶¨£¬Ö»È¡--ip.
-              -a, --isp=:    ÇøÓò±ðÃû£¬Èçctl-gd£¬±íÊ¾Òª²éÑ¯¿Í»§¶ËIPÔÚ¹ã¶«µçÐÅ·ÃÎÊÊ±ÓòÃû±»µ÷¶ÈµÄÄÄÀï.¶à¸öISPÓÃ¶ººÅ·Ö¸ô. --isp µÄ±ðÃûÓ³ÉäÔÚ %s ÎÄ¼þ.
-              -n, --edns=:   Ê¹ÓÃÖ¸¶¨µÄÇÒÖ§³ÖEDNSµÄIP½øÐÐ½âÎö£¬¿ÉÑ¡£¬Ä¬ÈÏÊÇ 119.29.29.29
-        ¾ÙÀý£º
-              1). sudo cdig --domain=www.duowan.com --isp=cmb-sd           ##²éÑ¯´ËÓòÃûÉ½¶«ÒÆ¶¯±»µ÷¶ÈÄÄÀï
-              2). sudo cdig --domain=www.duowan.com --isp=cmb-sd,cnc-sd    ##²éÑ¯¶à¸öISPÓÃ¶ººÅ·Ö¸ô
-              3). sudo cdig --domain=www.duowan.com --isp=cmb              ##²éÑ¯´ËÓòÃûÈ«²¿ÒÆ¶¯±»µ÷¶ÈÄÄÀï,²éÑ¯¶à¸öISPÓÃ¶ººÅ·Ö¸ô
-              4). sudo cdig --domain=www.duowan.com --isp=ctl,cnc          ##²éÑ¯¶à¸öISPÓÃ¶ººÅ·Ö¸ô 
-              5). sudo cdig --domain=www.duowan.com --ip=1.1.1.1           ##²éÑ¯´ËÓòÃûÔÚ1.1.1.1±»µ÷¶ÈÄÄÀï
-              6). sudo cdig --domain=www.duowan.com                        ##ÎÞ--ip»ò--ISPÑ¡Ïî£¬Ä¬ÈÏÊ¹ÓÃ²éÑ¯È«Íøµ÷¶È
-              7). sudo cdig --domain=www.duowan.com --edns=8.8.8.8         ##Ö¸¶¨ÆäËûEDNSÈç:8.8.8.8
+        å‚æ•°ï¼š
+              -d, --domain=: åŽé¢è·Ÿè¦çš„æŸ¥è¯¢åŸŸåï¼Œå¿…é€‰é¡¹.
+              -h, --help:    å¸®åŠ©ä¿¡æ¯.
+              -i, --ip=:     åŽé¢è·Ÿè¦æŸ¥è¯¢çš„IPï¼Œå¯é€‰ï¼Œå¦‚æžœä¸å¡«ï¼Œä¸”æ—  -aæˆ–--isp=é€‰é¡¹ ï¼Œé»˜è®¤æŸ¥çœ‹å…¨ç½‘è°ƒåº¦.
+                             å¦‚æžœ --ip ä¸Ž --isp åŒæ—¶æŒ‡å®šï¼Œåªå–--ip.
+              -a, --isp=:    åŒºåŸŸåˆ«åï¼Œå¦‚ctl-gdï¼Œè¡¨ç¤ºè¦æŸ¥è¯¢å®¢æˆ·ç«¯IPåœ¨å¹¿ä¸œç”µä¿¡è®¿é—®æ—¶åŸŸåè¢«è°ƒåº¦çš„å“ªé‡Œ.å¤šä¸ªISPç”¨é€—å·åˆ†éš”. --isp çš„åˆ«åæ˜ å°„åœ¨ %s æ–‡ä»¶.
+              -n, --edns=:   ä½¿ç”¨æŒ‡å®šçš„ä¸”æ”¯æŒEDNSçš„IPè¿›è¡Œè§£æžï¼Œå¯é€‰ï¼Œé»˜è®¤æ˜¯ 119.29.29.29
+        ä¸¾ä¾‹ï¼š
+              1). sudo cdig --domain=www.duowan.com --isp=cmb-sd           ##æŸ¥è¯¢æ­¤åŸŸåå±±ä¸œç§»åŠ¨è¢«è°ƒåº¦å“ªé‡Œ
+              2). sudo cdig --domain=www.duowan.com --isp=cmb-sd,cnc-sd    ##æŸ¥è¯¢å¤šä¸ªISPç”¨é€—å·åˆ†éš”
+              3). sudo cdig --domain=www.duowan.com --isp=cmb              ##æŸ¥è¯¢æ­¤åŸŸåå…¨éƒ¨ç§»åŠ¨è¢«è°ƒåº¦å“ªé‡Œ,æŸ¥è¯¢å¤šä¸ªISPç”¨é€—å·åˆ†éš”
+              4). sudo cdig --domain=www.duowan.com --isp=ctl,cnc          ##æŸ¥è¯¢å¤šä¸ªISPç”¨é€—å·åˆ†éš” 
+              5). sudo cdig --domain=www.duowan.com --ip=1.1.1.1           ##æŸ¥è¯¢æ­¤åŸŸååœ¨1.1.1.1è¢«è°ƒåº¦å“ªé‡Œ
+              6). sudo cdig --domain=www.duowan.com                        ##æ— --ipæˆ–--ISPé€‰é¡¹ï¼Œé»˜è®¤ä½¿ç”¨æŸ¥è¯¢å…¨ç½‘è°ƒåº¦
+              7). sudo cdig --domain=www.duowan.com --edns=8.8.8.8         ##æŒ‡å®šå…¶ä»–EDNSå¦‚:8.8.8.8
 
-##### ¹ØÓÚÔËÓªÉÌ¼°Ê¡·Ý±ðÃûÊ¹ÓÃËµÃ÷¼ûÎÄµµ×îºó<<¸½¼ÓËµÃ÷>>²¿·Ö			  
+##### å…³äºŽè¿è¥å•†åŠçœä»½åˆ«åä½¿ç”¨è¯´æ˜Žè§æ–‡æ¡£æœ€åŽ<<é™„åŠ è¯´æ˜Ž>>éƒ¨åˆ†			  
 			  
-#### whereip ¹¤¾ß
-Õâ¸öÊÇÄ£·Â¿ìÍø ¡°nali¡± ¹¦ÄÜµÄ¹¤¾ß£¬²»¹ýÕâ¸öÊÇÎÒ×Ô¼ºÐ´µÄ´úÂë£¬ÓÃÁËÁíÍâµÄIP²éÑ¯½Ó¿Ú£¬¼ÓÁË¶Ô¹ÜµÀÊäÈëºÍÎÄ¼þÊäÈëµÄ²éÑ¯Êä³öÅÅ°æ¡£
+#### whereip å·¥å…·
+è¿™æ˜¯ä¸€ä¸ªæŸ¥è¯¢IPçš„å°å·¥å…·ï¼Œæ”¯æŒå¤šIPæŸ¥è¯¢å’Œè¾“å‡ºã€‚
 
 ```
 whereip  <ip|ip_file>
@@ -49,7 +49,7 @@ whereip  <ip|ip_file>
 cmd |whereip
 ```
 
-¾ÙÀý£º
+ä¸¾ä¾‹ï¼š
 
     1. whereip  202.117.112.3
 	2. whereip  202.117.112.3  219.146.1.66 
@@ -58,7 +58,7 @@ cmd |whereip
 	5. cat ip.txt |whereip
 	
 
-### ½ØÍ¼
+### æˆªå›¾
 
 ![Alt text](https://github.com/avyou/CDN_dig/blob/master/document/img/cdn_dig_01.png)
 
@@ -74,65 +74,65 @@ cmd |whereip
 
 ![Alt text](https://github.com/avyou/CDN_dig/blob/master/document/img/whereip_03.png)
 
-### °²×°ËµÃ÷
+### å®‰è£…è¯´æ˜Ž
 
 https://github.com/avyou/CDN_dig/blob/master/document/INSTALL.md
 
-### ¸½¼ÓËµÃ÷
+### é™„åŠ è¯´æ˜Ž
 
-#### ISP¼ò³Æ¶ÔÓ¦±í
-
-```
-CTL    µçÐÅ
-CNC    ÁªÍ¨
-CMB    ÒÆ¶¯
-GWB    ³¤¿í
-CRC    ÌúÍ¨
-CER    ½ÌÓýÍø
-```
-
-#### Ê¡·ÝÇøÓò¶ÔÓ¦ÁÐ±í
+#### ISPç®€ç§°å¯¹åº”è¡¨
 
 ```
-BJ    ±±¾©
-TJ    Ìì½ò
-HE    ºÓ±±
-SX    É½Î÷
-NM    ÄÚÃÉ¹Å
-LN    ÁÉÄþ
-JL    ¼ªÁÖ
-HL    ºÚÁú½­
-SH    ÉÏº£
-JS    ½­ËÕ
-ZJ    Õã½­
-AH    °²»Õ
-FJ    ¸£½¨
-JX    ½­Î÷
-SD    É½¶«
-HA    ºÓÄÏ
-HB    ºþ±±
-HN    ºþÄÏ
-GD    ¹ã¶«
-GX    ¹ãÎ÷
-HI    º£ÄÏ
-CQ    ÖØÇì
-SC    ËÄ´¨
-GZ    ¹óÖÝ
-YN    ÔÆÄÏ
-XZ    Î÷²Ø
-SN    ÉÂÎ÷
-GS    ¸ÊËà
-QH    Çàº£
-NX    ÄþÏÄ
-XJ    ÐÂ½®
-HK    Ïã¸Û
-MO    °ÄÃÅ
-TW    Ì¨Íå
-CN    ÖÐ¹úÆäËü
-JP    ÈÕ±¾
-KR    º«¹ú
-AP    ÑÇÌ«ÆäËü
-OT    ÆäÓàµØÇø
+CTL    ç”µä¿¡
+CNC    è”é€š
+CMB    ç§»åŠ¨
+GWB    é•¿å®½
+CRC    é“é€š
+CER    æ•™è‚²ç½‘
+```
+
+#### çœä»½åŒºåŸŸå¯¹åº”åˆ—è¡¨
+
+```
+BJ    åŒ—äº¬
+TJ    å¤©æ´¥
+HE    æ²³åŒ—
+SX    å±±è¥¿
+NM    å†…è’™å¤
+LN    è¾½å®
+JL    å‰æž—
+HL    é»‘é¾™æ±Ÿ
+SH    ä¸Šæµ·
+JS    æ±Ÿè‹
+ZJ    æµ™æ±Ÿ
+AH    å®‰å¾½
+FJ    ç¦å»º
+JX    æ±Ÿè¥¿
+SD    å±±ä¸œ
+HA    æ²³å—
+HB    æ¹–åŒ—
+HN    æ¹–å—
+GD    å¹¿ä¸œ
+GX    å¹¿è¥¿
+HI    æµ·å—
+CQ    é‡åº†
+SC    å››å·
+GZ    è´µå·ž
+YN    äº‘å—
+XZ    è¥¿è—
+SN    é™•è¥¿
+GS    ç”˜è‚ƒ
+QH    é’æµ·
+NX    å®å¤
+XJ    æ–°ç–†
+HK    é¦™æ¸¯
+MO    æ¾³é—¨
+TW    å°æ¹¾
+CN    ä¸­å›½å…¶å®ƒ
+JP    æ—¥æœ¬
+KR    éŸ©å›½
+AP    äºšå¤ªå…¶å®ƒ
+OT    å…¶ä½™åœ°åŒº
 ```
 
 
